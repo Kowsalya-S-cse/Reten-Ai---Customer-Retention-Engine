@@ -5,12 +5,12 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-6.0+-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4+-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?logo=vercel&logoColor=white)](https://reten-ai-customer-retention-engine.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?logo=vercel&logoColor=white)](https://reten-ai-customer-retention-engine-liard.vercel.app/)
 [![Video Demo](https://img.shields.io/badge/Video_Demo-Google_Drive-4285F4?logo=googledrive&logoColor=white)](https://drive.google.com/file/d/1PNiRrq6li9pjnGoxqZ6LZfr9AHPqsvdR/view?usp=drivesdk)
 
 **Reten-AI** is a multi-domain, machine learning-powered customer churn prediction and retention engine built for **Cinema/Streaming**, **SaaS/Apps**, and **Telecom** enterprise ecosystems. It combines soft-voting ensemble ML models, automated Customer Lifetime Value (CLV) estimation, and actionable retention playbooks into an interactive analytics dashboard.
 
-> 🌐 **Live Web Application:** [https://reten-ai-customer-retention-engine.vercel.app](https://reten-ai-customer-retention-engine.vercel.app)  
+> 🌐 **Live Web Application:** [https://reten-ai-customer-retention-engine-liard.vercel.app/](https://reten-ai-customer-retention-engine-liard.vercel.app/)  
 > 🎥 **Video Demonstration:** [Watch the Full Project Walkthrough on Google Drive](https://drive.google.com/file/d/1PNiRrq6li9pjnGoxqZ6LZfr9AHPqsvdR/view?usp=drivesdk)
 
 ---
