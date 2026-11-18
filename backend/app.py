@@ -204,7 +204,20 @@ pipelines = {
 for domain in pipelines.keys():
     path = os.path.join(BASE_DIR, 'ml_engine', 'saved_models', f'{domain}_churn_pipeline.pkl')
     if os.path.exists(path):
-        pipelines[domain] = joblib.load(path)
+        pipe = joblib.load(path)
+        try:
+            voting_clf = pipe.steps[-1][1]
+            if hasattr(voting_clf, 'estimators_'):
+                for est in voting_clf.estimators_:
+                    if not hasattr(est, 'multi_class'):
+                        est.multi_class = 'auto'
+            if hasattr(voting_clf, 'named_estimators_'):
+                for name, est in voting_clf.named_estimators_.items():
+                    if not hasattr(est, 'multi_class'):
+                        est.multi_class = 'auto'
+        except Exception:
+            pass
+        pipelines[domain] = pipe
     else:
         print(f"WARNING: ML Pipeline for {domain} not found.")
 
