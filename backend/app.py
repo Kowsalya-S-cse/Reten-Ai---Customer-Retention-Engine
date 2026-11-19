@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import secrets
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
@@ -236,11 +237,33 @@ def read_root():
 def health():
     return {"status": "Universal AI Engine is Live", "domains_active": list(DOMAINS.keys())}
 
+
 @app.post("/login")
 def login(data: LoginRequest):
-    if data.username.lower().strip() == "admin" and data.password.strip() == "password":
+
+    admin_username = os.getenv("ADMIN_USERNAME")
+    admin_password = os.getenv("ADMIN_PASSWORD")
+
+    if not admin_username or not admin_password:
+        return {
+            "status": "error",
+            "message": "Admin login is not configured"
+        }
+
+    if (
+        secrets.compare_digest(
+            data.username.strip().lower(),
+            admin_username.strip().lower()
+        )
+        and secrets.compare_digest(
+            data.password,
+            admin_password
+        )
+    ):
         return {"status": "success", "user": "Official Admin"}
+
     return {"status": "error", "message": "Invalid credentials"}
+
 
 @app.post("/predict/cinema", response_model=PredictionResponse)
 def predict_cinema(data: StreamingCustomerData):
